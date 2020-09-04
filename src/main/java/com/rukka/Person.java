@@ -1,24 +1,24 @@
 package com.rukka;
 
-public class PersonJava {
+public class Person {
     String name;
     float weight;
     float height;
 
-    PersonJava(float weight, float height) {
+    public Person(float weight, float height) {
         this.weight = weight;
         this.height = height;
     }
-    PersonJava(String name, float weight, float height) {
+    public Person(String name, float weight, float height) {
         this(weight, height);
         this.name = name;
     }
 
-    void hello() {
+    public void hello() {
         System.out.println("Hello Java");
     }
 
-    float bmi() {
+    public float bmi() {
         return weight / (height*height);
     }
 }

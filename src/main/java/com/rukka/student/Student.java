@@ -6,6 +6,7 @@ public class Student {
     String name;
     int englishScore;
     int mathScore;
+    static int pass = 60;
 
     public Student(String name, int englishScore, int mathScore) {
         this.name = name;
@@ -20,7 +21,7 @@ public class Student {
     public void print() {
         System.out.print(name + "\t" + englishScore + "\t" + mathScore +
                 "\t" + getAverage() + "\t" +
-                ((getAverage() < 60) ? "FAILED" : "PASS"));
+                ((getAverage() < pass) ? "FAILED" : "PASS"));
         /*if (getAverage() < 60) {
             System.out.println("\tFAILED");
         } else {
