@@ -1,24 +1,36 @@
 package com.rukka.student
 
 import java.util.*
-import kotlin.math.max
 
 fun main() {
 //    userInput()
-    StudentKotlin.pass = 80
-    val testStd = StudentKotlin("Liz",
+//    StudentKotlin.pass = 80
+
+    val std = StudentKotlin("Liz",
             60, 60)
-    val testStd2 = StudentKotlin("Jay",
+    val std2 = StudentKotlin("Jay",
             70, 80)
-    val testStd3 = StudentKotlin("May",
+    val std3 = StudentKotlin("May",
             30, 40)
-    testStd.print()
-    testStd2.print()
-    testStd3.print()
-    println("Highest score: ${testStd.highest() }")
+    val gStd = GraduateStudentKotlin("Hank",
+            60, 60, 70)
+    gStd.print()
+    std.print()
+    std2.print()
+    std3.print()
+    println("Highest score: ${std.highest() }")
 }
 
-class StudentKotlin(val name: String?, val englishScore: Int, val mathScore: Int) {
+class GraduateStudentKotlin(name: String?, englishScore: Int, mathScore: Int, val thesisScore: Int) : StudentKotlin(name, englishScore, mathScore) {
+    init {
+        pass = 70
+    }
+    override fun print() {
+        println("$name\t$englishScore\t$mathScore\t$thesisScore\t${getAverage()}\t${passOrFaild()}\t${getGrading()}")
+    }
+}
+
+open class StudentKotlin(val name: String?, val englishScore: Int, val mathScore: Int) {
     companion object {
         @JvmStatic
         var pass = 60
@@ -26,7 +38,7 @@ class StudentKotlin(val name: String?, val englishScore: Int, val mathScore: Int
             println("testing")
         }
     }
-    fun print() {
+    open fun print() {
         println("$name\t$englishScore\t$mathScore\t${getAverage()}\t${passOrFaild()}\t${getGrading()}")
     }
     fun passOrFaild() = if (getAverage() >= pass) "PASS" else "FAILED"

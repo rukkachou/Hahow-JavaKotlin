@@ -5,17 +5,19 @@ import java.util.Scanner;
 public class SchoolRunner {
     public static void main(String[] args) {
 //        userInput();
-        Student.pass = 90;
-        Student testStd = new Student("Rukka",
+//        Student.pass = 90;
+        Student std = new Student("Rukka",
                 60, 98);
-        Student testStd2 = new Student("Scute",
+        Student std2 = new Student("Scute",
                 70, 90);
-        Student testStd3 = new Student("Janee",
+        Student std3 = new Student("Janee",
                 30, 40);
-
-        testStd.print();
-        testStd2.print();
-        testStd3.print();
+        GraduateStudent gStd = new GraduateStudent("Jack",
+                60, 60, 60);
+        gStd.print();
+        std.print();
+        std2.print();
+        std3.print();
     }
 
     private static void userInput() {
