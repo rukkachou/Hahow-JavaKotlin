@@ -1,0 +1,3 @@
+a hello to filestream
+2nd line data
+the end
